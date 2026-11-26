@@ -1,0 +1,126 @@
+# Python 文件I/O
+
+## 标准输入输出
+- print：输出到屏幕
+- raw_input([prompt])：读取一行输入，返回字符串（Python2）
+- input([prompt])：可接收Python表达式，返回运算结果（Python2）
+
+## 打开文件
+```python
+file_object = open(file_name [, access_mode][, buffering])
+```
+access_mode 模式：
+- r：只读（默认），指针在开头
+- w：只写，存在则覆盖，不存在则创建
+- a：追加，指针在结尾
+- r+：读写，指针在开头
+- w+：读写，存在则覆盖
+- a+：读写追加
+- 加 b 表示二进制模式（rb, wb, ab等）
+
+## File 对象属性
+- file.closed：文件是否已关闭
+- file.mode：访问模式
+- file.name：文件名称
+
+## 读取文件
+```python
+file.read([count])   # 读取指定字节数，不指定则读全部
+fo = open("foo.txt", "r+")
+str = fo.read(10)    # 读取10个字节
+```
+
+## 写入文件
+```python
+file.write(string)   # 写入字符串，不会自动添加换行符
+fo.write("www.runoob.com!\nVery good site!\n")
+```
+
+## 文件定位
+- tell()：返回当前文件位置（字节数）
+- seek(offset [,from])：改变文件位置
+  - from=0：从开头计算偏移
+  - from=1：从当前位置计算
+  - from=2：从文件末尾计算
+
+## 关闭文件
+```python
+file.close()  # 刷新缓冲区并关闭文件
+```
+
+## 文件和目录操作（os模块）
+```python
+import os
+os.rename("old.txt", "new.txt")  # 重命名文件
+os.remove("file.txt")            # 删除文件
+os.mkdir("dir")                  # 创建目录
+os.chdir("/path/to/dir")         # 改变当前目录
+os.getcwd()                      # 获取当前目录
+os.rmdir("dir")                  # 删除目录（需为空）
+```
+
+## Python 异常处理
+
+### 常用异常类型
+- Exception：常规错误基类
+- IOError：输入/输出操作失败
+- ValueError：传入无效参数
+- TypeError：对类型无效的操作
+- IndexError：序列中没有此索引
+- KeyError：映射中没有这个键
+- NameError：未声明/初始化对象
+- ZeroDivisionError：除零错误
+- ImportError：导入模块/对象失败
+- SyntaxError：语法错误
+- IndentationError：缩进错误
+- AttributeError：对象没有这个属性
+
+### try-except 语法
+```python
+try:
+    # 正常代码
+except ExceptionType:
+    # 异常处理
+else:
+    # 没有异常时执行
+finally:
+    # 总会执行
+```
+
+### 捕获异常示例
+```python
+try:
+    fh = open("testfile", "w")
+    fh.write("这是一个测试文件！")
+except IOError:
+    print "Error: 没有找到文件或读取文件失败"
+else:
+    print "内容写入文件成功"
+    fh.close()
+```
+
+### 捕获多种异常
+```python
+except (Exception1[, Exception2[,...]]):
+    # 处理多个异常
+```
+
+### try-finally 语句
+finally中的代码无论是否发生异常都会执行，常用于清理资源。
+
+### 触发异常（raise）
+```python
+raise Exception("Invalid level!")
+```
+
+### 用户自定义异常
+```python
+class Networkerror(RuntimeError):
+    def __init__(self, arg):
+        self.args = arg
+
+try:
+    raise Networkerror("Bad hostname")
+except Networkerror, e:
+    print e.args
+```

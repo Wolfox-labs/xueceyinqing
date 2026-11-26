@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "chat": "Chat",
+    "assess": "Assessment",
+    "learningPath": "Learning Path",
+    "profile": "Profile",
+    "generate": "Generate"
+  },
+  "chat": {
+    "title": "Learning Chat",
+    "aiName": "AI Teacher",
+    "placeholder": "Enter your question...",
+    "send": "Send",
+    "welcome": "Hello, I'm the Xuece AI learning assistant",
+    "welcomeDesc": "Powered by a CrewAI multi-agent system, I can give you personalized learning guidance. Try asking me a question!",
+    "thinking": "Thinking...",
+    "newSession": "New Chat",
+    "noSessions": "No chat history",
+    "withdrawn": "Content withdrawn"
+  },
+  "learningPath": {
+    "title": "Learning Path",
+    "progress": "Progress",
+    "generate": "Generate Learning Path",
+    "generating": "Generating learning path...",
+    "generateTopic": "Learning Topic",
+    "noPath": "No learning path yet. Generate one to get started."
+  },
+  "profile": {
+    "title": "Profile",
+    "loadError": "Failed to load profile",
+    "retry": "Retry",
+    "learningStage": "Learning Stage:",
+    "learningPref": "Learning Preferences",
+    "learningStyle": "Learning Style",
+    "languagePref": "Language Preference",
+    "interests": "Interests"
+  },
+  "assess": {
+    "title": "Learning Assessment",
+    "topicPlaceholder": "Enter a knowledge domain to assess...",
+    "start": "Start Assessment",
+    "assessing": "Assessing: generating questions and analyzing your learning record...",
+    "score": "Score",
+    "maxScore": "Max Score",
+    "percentage": "Accuracy",
+    "weakPoints": "Weak Points",
+    "strengths": "Strengths",
+    "suggestions": "Learning Suggestions",
+    "viewReport": "View Learner Profile",
+    "error": "Assessment failed, please retry",
+    "questionCount": "Question Count",
+    "generating": "Generating questions...",
+    "submitAnswer": "Submit Answers",
+    "submitting": "Scoring...",
+    "answerPlaceholder": "Enter your answer",
+    "questionNumber": "Question {{n}}"
+  },
+  "generate": {
+    "title": "Resource Generation",
+    "type": "Resource Type",
+    "topic": "Topic",
+    "topicPlaceholder": "Enter a topic to learn about...",
+    "generate": "Generate",
+    "generating": "Generating...",
+    "withdrawn": "Content withdrawn",
+    "collapse": "Generation Process",
+    "download": "Download",
+    "regenerate": "Regenerate",
+    "noFile": "No File",
+    "types": {
+      "document": "Document",
+      "mindmap": "Mind Map",
+      "exercise": "Exercise",
+      "ppt": "PPT Slides"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry"
+  }
+}

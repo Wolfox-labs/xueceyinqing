@@ -1,0 +1,75 @@
+# Python 列表(List)
+
+## 列表创建
+列表是Python中最常用的数据类型，用方括号[]定义，数据项不需要相同类型：
+```python
+list1 = ['physics', 'chemistry', 1997, 2000]
+list2 = [1, 2, 3, 4, 5]
+list3 = ["a", "b", "c", "d"]
+```
+
+## 访问列表元素
+索引从0开始，支持负索引：
+```python
+list1[0]     # 'physics'
+list2[1:5]   # [2, 3, 4, 5]
+L[-2]        # 倒数第二个元素
+L[1:]        # 从第二个元素开始截取
+```
+
+## 更新列表
+```python
+list = []
+list.append('Google')   # 在末尾添加
+list[0] = 'pear'         # 直接修改
+```
+
+## 删除列表元素
+```python
+del list1[2]             # 按索引删除
+list.remove(obj)          # 按值删除（第一个匹配项）
+list.pop([index])         # 移除并返回元素（默认最后一个）
+```
+
+## 列表操作符
+- len([1, 2, 3]) = 3  # 长度
+- [1,2,3] + [4,5,6] = [1,2,3,4,5,6]  # 组合
+- ['Hi!'] * 4 = ['Hi!','Hi!','Hi!','Hi!']  # 重复
+- 3 in [1, 2, 3] = True  # 成员判断
+
+## 列表函数
+- cmp(list1, list2)：比较两个列表（Python2）
+- len(list)：列表元素个数
+- max(list)：返回最大值
+- min(list)：返回最小值
+- list(seq)：将元组转换为列表
+
+## 列表方法
+- list.append(obj)：末尾添加对象
+- list.count(obj)：统计元素出现次数
+- list.extend(seq)：末尾一次性追加另一个序列
+- list.index(obj)：找出第一个匹配项的索引
+- list.insert(index, obj)：插入对象到指定位置
+- list.pop([index=-1])：移除并返回元素
+- list.remove(obj)：移除第一个匹配项（按值）
+- list.reverse()：反向列表
+- list.sort(cmp=None, key=None, reverse=False)：排序
+
+## 列表切片
+切片语法：[起始:结束:步长]
+```python
+s = 'abcdefg'
+s[:3]      # 'abc' - 从开头到索引2
+s[3:]      # 'defg' - 从索引3到结尾
+s[::-1]    # 'gfedcba' - 逆序
+s[::2]     # 'aceg' - 间隔一个字符
+s[6:2:-2]  # 'ge' - 从索引6逆向到索引2，间隔2
+```
+
+## 列表推导式
+[表达式 for 变量 in 可迭代对象 if 条件]
+```python
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(20) if x % 2 == 0]
+[(x,y) for x in [1,2] for y in [3,4]]  # [(1,3),(1,4),(2,3),(2,4)]
+```

@@ -1,0 +1,160 @@
+# Python 面向对象编程
+
+## 类和对象
+类是对象的蓝图，使用 class 关键字定义：
+```python
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        return f'{self.name} says woof!'
+
+my_dog = Dog('Rex', 3)
+print(my_dog.bark())
+```
+
+## 继承
+子类继承父类的属性和方法，可以重写或扩展：
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        pass
+
+class Cat(Animal):
+    def speak(self):
+        return f'{self.name} says meow!'
+```
+
+Python 支持多继承，一个类可以继承多个父类。
+
+## 封装
+使用单下划线 _ 表示"受保护"属性，双下划线 __ 触发名称改写实现私有属性：
+```python
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self._balance = balance  # 受保护
+        self.__pin = '1234'       # 私有
+    
+    def get_balance(self):
+        return self._balance
+```
+
+## 多态
+不同类可以定义同名方法，实现不同行为：
+```python
+class Circle:
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle:
+    def area(self):
+        return self.width * self.height
+
+def print_area(shape):
+    print(f'面积: {shape.area()}')
+```
+
+## 魔术方法
+以双下划线开头和结尾的特殊方法，如 __str__, __repr__, __len__, __add__ 等：
+```python
+class Vector:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+    
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+    
+    def __str__(self):
+        return f'Vector({self.x}, {self.y})'
+```
+
+## 属性装饰器
+@property 将方法变为属性访问方式：
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+    
+    @property
+    def diameter(self):
+        return self._radius * 2
+```
+
+## Python 内置类属性
+- `__dict__`：类的属性字典，包含类的数据属性
+- `__doc__`：类的文档字符串，通过 ClassName.__doc__ 访问
+- `__name__`：类名
+- `__module__`：类定义所在的模块名（类的全名是 '__main__.className'）
+- `__bases__`：所有父类组成的元组
+
+## self 代表类的实例
+类的方法与普通函数的唯一区别是必须有额外的第一个参数（通常是 self），self 代表类的实例而非类本身，约定命名为 self 但不是 Python 关键字。
+```python
+class Test:
+    def prt(self):
+        print(self)          # 当前对象的地址
+        print(self.__class__)  # 指向类
+```
+
+## 创建实例对象与访问属性
+Python 实例化类似函数调用，通过 __init__ 接收参数：
+```python
+emp1 = Employee("Zara", 2000)
+emp1.displayEmployee()
+emp1.age = 7       # 添加属性
+emp1.age = 8       # 修改属性
+del emp1.age       # 删除属性
+```
+也可使用函数访问属性：
+- getattr(obj, name[, default])：访问属性
+- hasattr(obj, name)：检查是否存在属性
+- setattr(obj, name, value)：设置属性
+- delattr(obj, name)：删除属性
+
+## 对象销毁（垃圾回收）
+Python 使用引用计数跟踪和回收垃圾。引用计数变为0时被回收。__del__ 析构函数在对象销毁时调用：
+```python
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x, self.y = x, y
+    def __del__(self):
+        class_name = self.__class__.__name__
+        print class_name, "销毁"
+```
+
+## 基础重载方法
+- `__init__(self [,args...])`：构造函数，obj = className(args)
+- `__del__(self)`：析构函数，del obj
+- `__repr__(self)`：供解释器读取的形式，repr(obj)
+- `__str__(self)`：适于人阅读的形式，str(obj)
+- `__cmp__(self, x)`：对象比较，cmp(obj, x)（Python2）
+
+## 运算符重载
+```python
+class Vector:
+    def __init__(self, a, b):
+        self.a, self.b = a, b
+    def __str__(self):
+        return 'Vector (%d, %d)' % (self.a, self.b)
+    def __add__(self, other):
+        return Vector(self.a + other.a, self.b + other.b)
+v1 = Vector(2, 10)
+v2 = Vector(5, -2)
+print v1 + v2   # Vector(7, 8)
+```
+
+## 私有属性和方法
+- `__private_attrs`：两个下划线开头，声明为私有属性，只能在类内部使用 self.__private_attrs 访问
+- `__private_method`：两个下划线开头，声明为私有方法，只能在类内部调用
+- 通过名称改写 `_ClassName__attrName` 仍可访问私有成员
+
+## 下划线命名规则
+- `__foo__`：特殊方法（魔术方法），系统定义，如 __init__()
+- `_foo`：单下划线开头，表示 protected 类型，仅本身和子类访问，不能 from module import *
+- `__foo`：双下划线开头，私有类型(private)，仅类本身访问

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 560" role="img" aria-label="学策引擎——算法驱动的多智能体自适应学习系统">
+  <image href="xuece-mark.svg" x="72" y="120" width="320" height="320"/>
+  <text x="425" y="196" fill="#e8f6ff" font-family="Microsoft YaHei, Noto Sans SC, sans-serif" font-size="150" font-weight="700">学策引擎</text>
+  <rect x="428" y="238" width="137" height="6" fill="#20c7e8"/>
+  <text x="425" y="299" fill="#e8f6ff" font-family="Microsoft YaHei, Noto Sans SC, sans-serif" font-size="36" font-weight="700">算法驱动的多智能体自适应学习系统</text>
+  <text x="428" y="351" fill="#8fa9bd" font-family="Consolas, monospace" font-size="21" letter-spacing="3">ALGORITHM-DRIVEN MULTI-AGENT ADAPTIVE LEARNING</text>
+  <line x1="428" y1="414" x2="1712" y2="414" stroke="#20c7e8" stroke-opacity=".25" stroke-width="2"/>
+  <circle cx="428" cy="417" r="9" fill="#35d39a"/>
+</svg>

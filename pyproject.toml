@@ -1,0 +1,64 @@
+[project]
+name = "xuece-engine"
+version = "0.2.0"
+description = "学策引擎——算法驱动的多智能体自适应学习系统"
+authors = [{ name = "Xuece Team" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=1.15.2,<2.0.0",
+    "fastapi>=0.139.0",
+    "uvicorn>=0.51.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "chromadb>=1.1.1,<2.0.0",
+    "python-docx>=1.2.0,<2.0.0",
+    # python-multipart 与 pymupdf 此前被写成了上一行里的字面量 "\n"，
+    # 既让 TOML 无法解析，也使这两个包实际上从未被声明；
+    # 它们分别是 FastAPI 上传接口和 PDF 资料解析（core/material_service.py）的必需依赖。
+    "python-multipart>=0.0.20,<1.0.0",
+    "pymupdf>=1.24.0,<2.0.0",
+    "python-pptx>=1.0.0",
+    "json-repair>=0.30.0",
+    # core/short_answer_grader.py 直接 import httpx 调用评分接口，
+    # 此前只靠 crewai 的传递依赖，必须显式声明。
+    "httpx>=0.27.0",
+    # core/vision_ocr.py 在识别图片前用 Pillow 等比缩小超大图片，
+    # 否则 20 MB 上限内的原图会被整段塞进多模态请求体。属生产路径依赖，
+    # 不能只放在下面的 scripts 可选组里。
+    "pillow>=10.0.0",
+    "streamlit>=1.40.0",
+]
+
+[project.optional-dependencies]
+# 测试：pytest 此前完全缺席，测试无法通过声明的环境运行。
+dev = [
+    "pytest>=8.0.0",
+]
+docs = ["reportlab>=4.0.0"]
+# 仅 scripts/ 下的手册与配图生成脚本需要。
+scripts = ["pillow>=10.0.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# 注意：必须包含 config.py —— core/short_answer_grader.py 里
+# `from config import MODEL_LLM`，漏掉它会让构建出的 wheel 一导入就失败。
+only-include = [
+    "agents",
+    "core",
+    "crews",
+    "tools",
+    "knowledge",
+    "db",
+    "utils",
+    "api_server",
+    "schemas",
+    "scripts",
+    "config.py",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

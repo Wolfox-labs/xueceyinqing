@@ -1,0 +1,83 @@
+# Python 基础语法
+
+## 变量和数据类型
+Python 是动态类型语言，变量无需声明类型。基本数据类型包括：
+- int: 整数，如 42, -10, 0
+- float: 浮点数，如 3.14, -0.5
+- str: 字符串，用单引号或双引号括起，如 'hello', "world"
+- bool: 布尔值，True 或 False
+- None: 空值
+
+## 列表和元组
+列表是可变序列，用方括号 [] 定义，支持增删改查：
+```python
+fruits = ['apple', 'banana', 'orange']
+fruits.append('grape')
+fruits[0] = 'pear'
+```
+
+元组是不可变序列，用圆括号 () 定义：
+```python
+point = (3, 4)
+```
+
+## 字典和集合
+字典是键值对集合，用花括号 {} 定义：
+```python
+student = {'name': '张三', 'age': 20, 'score': 95}
+print(student['name'])
+```
+
+集合是无序不重复元素的集合：
+```python
+unique_nums = {1, 2, 3, 3, 2}  # 结果为 {1, 2, 3}
+```
+
+## 条件语句
+使用 if-elif-else 进行条件判断，缩进表示代码块：
+```python
+score = 85
+if score >= 90:
+    print('优秀')
+elif score >= 80:
+    print('良好')
+else:
+    print('需努力')
+```
+
+## 循环语句
+for 循环遍历可迭代对象：
+```python
+for i in range(5):
+    print(i)
+```
+
+while 循环在条件为真时重复执行：
+```python
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+```
+
+## 列表推导式
+列表推导式是创建列表的简洁方式，基本语法：
+[表达式 for 变量 in 可迭代对象 if 条件]
+
+```python
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(20) if x % 2 == 0]
+```
+
+## 函数定义
+使用 def 关键字定义函数：
+```python
+def add(a, b):
+    return a + b
+```
+
+函数可以有默认参数、可变参数和关键字参数：
+```python
+def greet(name, greeting='你好'):
+    return f'{greeting}, {name}!'
+```

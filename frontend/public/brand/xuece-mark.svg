@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="学策引擎标志">
+  <defs>
+    <linearGradient id="path" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#20c7e8"/><stop offset="1" stop-color="#35d39a"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M78 398L133 121M78 398L275 94M133 121L405 132M275 94L405 132M78 398L430 326" stroke="#1b4960" stroke-width="8"/>
+    <path d="M78 398C112 348 252 252 405 132" stroke="url(#path)" stroke-width="14" filter="url(#glow)"/>
+    <path d="M293 21A112 112 0 0 1 443 178" stroke="#7c5cff" stroke-width="5"/>
+    <path d="M448 221A112 112 0 0 1 417 265" stroke="#20c7e8" stroke-width="5"/>
+  </g>
+  <g stroke-width="7">
+    <circle cx="78" cy="398" r="29" fill="#06111f" stroke="#20c7e8"/><circle cx="78" cy="398" r="11" fill="#e8f6ff"/>
+    <circle cx="133" cy="121" r="24" fill="#06111f" stroke="#1b4960"/><circle cx="133" cy="121" r="9" fill="#8fa9bd"/>
+    <circle cx="275" cy="94" r="24" fill="#06111f" stroke="#1b4960"/><circle cx="275" cy="94" r="9" fill="#8fa9bd"/>
+    <circle cx="430" cy="326" r="20" fill="#06111f" stroke="#1b4960"/><circle cx="430" cy="326" r="8" fill="#8fa9bd"/>
+    <circle cx="405" cy="132" r="31" fill="#06111f" stroke="#35d39a"/><circle cx="405" cy="132" r="12" fill="#e8f6ff"/>
+  </g>
+  <path d="M424 118L409 154L435 160Z" fill="#65e2f7"/>
+  <path d="M416 125L411 147L426 150Z" fill="#35d39a"/>
+</svg>

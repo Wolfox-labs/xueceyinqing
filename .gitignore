@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.crewai_data/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/.vite/
+frontend/dist/
+
+# Build / Runtime output
+runtime/
+output/
+outputs/
+dist/
+chroma_data/
+
+# Database and private data
+data/
+db/app.db*
+logs/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# Secrets
+.env
+.env.local
+.env.*.local
+.ssh/
+*.pem
+*.key
+
+# 参赛/提交物等本地私有材料
+多智能体提交物/
+*.lnk
+
+# IDE
+.idea/
+.trae/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+.tmp/
+*.log
+review_log.jsonl
+mlqkCrew-main/
+vite.config.ts.timestamp-*.mjs

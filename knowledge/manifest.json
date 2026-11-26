@@ -1,0 +1,12 @@
+{
+  "schema_version": "2",
+  "generated_at": "2026-10-02T02:04:12.332327+00:00",
+  "legacy_source_dir": "knowledge/_legacy",
+  "curated_dir": "knowledge/curated",
+  "files": 109,
+  "legacy_cards": 97,
+  "curated_cards": 12,
+  "total_chars": 45419,
+  "chunk_target_chars": 600,
+  "default_source": "Python 官方文档 / 学策引擎自编讲义"
+}

@@ -1,0 +1,127 @@
+# Python 函数
+
+## 定义函数
+```python
+def functionname(parameters):
+    "函数文档字符串"
+    function_suite
+    return [expression]
+```
+- 以 def 关键词开头，后接函数名和圆括号
+- 参数放在圆括号中
+- 函数内容以冒号起始，缩进表示代码块
+- return 结束函数，不带表达式返回 None
+
+## 参数传递
+Python中类型属于对象，变量无类型。参数传递分为：
+- 不可变类型（strings, tuples, numbers）：类似值传递，修改不会影响外部变量
+- 可变类型（list, dict）：类似引用传递，修改会影响外部变量
+
+```python
+def ChangeInt(a):
+    a = 10
+b = 2
+ChangeInt(b)
+print b  # 输出 2，不变
+
+def changeme(mylist):
+    mylist.append([1,2,3,4])
+mylist = [10,20,30]
+changeme(mylist)
+print mylist  # [10,20,30,[1,2,3,4]]，已改变
+```
+
+## 参数类型
+- 必备参数：须以正确顺序传入，数量必须匹配
+- 关键字参数：使用参数名匹配，顺序可不同
+```python
+printinfo(age=50, name="miki")
+```
+- 默认参数：调用时未传入则使用默认值
+```python
+def printinfo(name, age=35):
+    ...
+```
+- 不定长参数：`*varname` 存放所有未命名变量参数（元组）
+```python
+def printinfo(arg1, *vartuple):
+    print arg1
+    for var in vartuple:
+        print var
+printinfo(70, 60, 50)  # 输出 70, 60, 50
+```
+
+## 匿名函数（lambda）
+```python
+lambda [arg1 [,arg2,...]]: expression
+sum = lambda arg1, arg2: arg1 + arg2
+sum(10, 20)  # 30
+```
+lambda 是表达式而非代码块，只能封装有限逻辑。
+
+## 变量作用域
+- 全局变量：定义在函数外，整个程序可访问
+- 局部变量：定义在函数内，只能在函数内部访问
+- 使用 global 关键字在函数内声明全局变量：
+```python
+globvar = 0
+def set_globvar():
+    global globvar
+    globvar = 1
+```
+
+## Python 模块
+
+### 模块导入
+模块是包含Python定义和语句的.py文件。
+```python
+import module1[, module2,...]   # 导入整个模块
+from modname import name1       # 导入指定部分
+from modname import *           # 导入所有内容（不推荐）
+```
+一个模块只会被导入一次。
+
+### 搜索路径
+1. 当前目录
+2. PYTHONPATH 环境变量中的目录
+3. 默认路径（如 /usr/local/lib/python/）
+模块搜索路径存储在 sys.path 中。
+
+### 命名空间和作用域
+- 局部变量会覆盖全局变量
+- 函数内赋值的变量默认为局部变量
+- 使用 global 声明全局变量
+
+### dir() 函数
+返回模块里定义的所有模块、变量和函数的排序列表：
+```python
+import math
+content = dir(math)  # 返回 math 模块所有名称
+```
+
+### globals() 和 locals()
+- locals()：返回局部命名空间字典
+- globals()：返回全局命名空间字典
+
+### reload() 函数
+重新执行已导入模块的顶层代码：
+```python
+reload(module_name)
+```
+
+### Python 包
+包是包含 __init__.py 文件的目录，定义模块和子包的环境。
+目录结构示例：
+```
+package_runoob/
+|-- __init__.py
+|-- runoob1.py
+|-- runoob2.py
+```
+导入方式：
+```python
+from package_runoob.runoob1 import runoob1
+```
+
+### __name__ == '__main__'
+当.py文件被直接运行时，`if __name__ == '__main__':` 下的代码块被执行；当文件被导入时则不会执行。

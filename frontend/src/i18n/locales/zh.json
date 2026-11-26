@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "dashboard": "学习驾驶舱",
+    "algorithmLab": "算法实验室",
+    "chat": "学习助手",
+    "assess": "诊断测评",
+    "learningPath": "自适应路径",
+    "profile": "学习者档案",
+    "generate": "学习资源"
+  },
+  "chat": {
+    "title": "学习助手",
+    "aiName": "AI 教师",
+    "placeholder": "请输入你的问题...",
+    "send": "发送",
+    "welcome": "你好，我是学策引擎学习助手",
+    "welcomeDesc": "基于 CrewAI 多智能体系统，为你提供个性化学习指导。试着问我一个问题吧！",
+    "thinking": "思考中...",
+    "newSession": "新建对话",
+    "noSessions": "暂无历史对话",
+    "withdrawn": "内容已撤回"
+  },
+  "learningPath": {
+    "title": "自适应学习路径",
+    "progress": "学习进度",
+    "generate": "生成学习路径",
+    "generating": "正在生成学习路径...",
+    "generateTopic": "学习主题",
+    "noPath": "暂无学习路径，请先生成一个"
+  },
+  "profile": {
+    "title": "学习者档案",
+    "loadError": "无法加载用户画像",
+    "retry": "重试",
+    "learningStage": "学习阶段:",
+    "learningPref": "学习偏好",
+    "learningStyle": "学习风格",
+    "languagePref": "语言偏好",
+    "interests": "兴趣领域"
+  },
+  "assess": {
+    "title": "诊断测评",
+    "topicPlaceholder": "输入要评估的知识领域...",
+    "start": "开始评估",
+    "assessing": "评估中，正在生成题库并分析...",
+    "score": "得分",
+    "maxScore": "满分",
+    "percentage": "正确率",
+    "weakPoints": "薄弱知识点",
+    "strengths": "优势领域",
+    "suggestions": "学习建议",
+    "viewReport": "查看学习者档案",
+    "error": "评估失败，请重试",
+    "questionCount": "题量",
+    "generating": "正在生成题目...",
+    "submitAnswer": "提交答案",
+    "submitting": "正在评分...",
+    "answerPlaceholder": "请输入你的答案",
+    "questionNumber": "第 {{n}} 题"
+  },
+  "generate": {
+    "title": "学习资源",
+    "type": "资源类型",
+    "topic": "生成主题",
+    "topicPlaceholder": "输入想要学习的话题...",
+    "generate": "开始生成",
+    "generating": "生成中...",
+    "withdrawn": "内容已撤回",
+    "collapse": "生成过程",
+    "download": "下载文件",
+    "regenerate": "重新生成",
+    "noFile": "无文件",
+    "types": {
+      "document": "讲解文档",
+      "mindmap": "思维导图",
+      "exercise": "练习题",
+      "ppt": "PPT演示"
+    }
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "操作失败",
+    "retry": "重试"
+  }
+}
+
+

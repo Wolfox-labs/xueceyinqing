@@ -1,0 +1,92 @@
+# Python 字符串
+
+## 创建字符串
+字符串可以用单引号(')、双引号(")、三引号('''或""")创建：
+```python
+var1 = 'Hello World!'
+var2 = "Python Runoob"
+```
+
+## 访问字符串中的值
+使用方括号截取子字符串，索引从0开始：
+- var1[0] -> 'H'
+- var2[1:5] -> 'ytho'
+- 从左到右索引从0开始，从右到左索引从-1开始
+- [头下标:尾下标]：包含头下标，不包含尾下标
+
+## 字符串运算符（a="Hello", b="Python"）
+- `+` 字符串连接：a + b = 'HelloPython'
+- `*` 重复输出：a * 2 = 'HelloHello'
+- `[]` 索引获取字符：a[1] = 'e'
+- `[:]` 截取字符串：a[1:4] = 'ell'
+- `in` 成员运算符：'H' in a = True
+- `not in`：'M' not in a = True
+- `r/R` 原始字符串：print r'\n' 输出 \n（不转义）
+- `%` 格式字符串
+
+## 字符串格式化
+常用格式化符号：
+- %c：格式化字符及其ASCII码
+- %s：格式化字符串
+- %d：格式化整数
+- %u：格式化无符号整型
+- %o：格式化无符号八进制数
+- %x/%X：格式化无符号十六进制数
+- %f：格式化浮点数，可指定精度
+- %e/%E：科学计数法格式化浮点数
+
+辅助指令：`*` 定义宽度/精度，`-` 左对齐，`+` 正数前显示加号，`0` 前填充0
+
+示例：
+```python
+print "My name is %s and weight is %d kg!" % ('Zara', 21)
+# 输出：My name is Zara and weight is 21 kg!
+```
+
+## 转义字符
+- `\\` 反斜杠符号
+- `\'` 单引号
+- `\"` 双引号
+- `\n` 换行
+- `\t` 横向制表符
+- `\r` 回车
+- `\b` 退格
+- `\a` 响铃
+- `\ooo` 八进制数，如 \012 代表换行
+- `\xhh` 十六进制数，如 \x0a 代表换行
+
+## 三引号
+三引号允许字符串跨多行，包含换行符、制表符等：
+```python
+hi = '''hi
+there'''
+# hi 值为 'hi\nthere'
+```
+
+## Unicode 字符串
+```python
+u'Hello World !'  # 创建Unicode字符串
+u'Hello\u0020World !'  # Unicode-Escape编码，\u0020 为空格
+```
+
+## 常用字符串内建方法
+- capitalize()：第一个字符大写
+- center(width)：居中，用空格填充至width
+- count(str, beg=0, end=len)：str出现次数
+- endswith(obj)：是否以obj结束
+- find(str, beg=0, end=len)：查找str，返回索引，找不到返回-1
+- index(str, beg=0, end=len)：同find，但找不到会报异常
+- isalnum()：所有字符都是字母或数字返回True
+- isalpha()：所有字符都是字母返回True
+- isdigit()：只包含数字返回True
+- islower()/isupper()：是否全小写/全大写
+- join(seq)：以字符串为分隔符合并seq
+- lower()/upper()：转小写/大写
+- lstrip()/rstrip()/strip()：去除左/右/两边空格
+- replace(str1, str2 [,num])：替换，num指定次数
+- split(str="", num)：以str分隔，num指定分隔次数
+- splitlines()：按行分隔
+- startswith(obj)：是否以obj开头
+- swapcase()：翻转大小写
+- title()：标题化（每个单词首字母大写）
+- zfill(width)：右对齐，前面填充0

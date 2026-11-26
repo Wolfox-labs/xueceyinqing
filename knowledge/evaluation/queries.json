@@ -1,0 +1,10 @@
+[
+  {"query": "列表怎么创建", "expected": ["列表", "创建"]},
+  {"query": "函数参数有哪些", "expected": ["函数", "参数"]},
+  {"query": "Python 异常处理", "expected": ["异常", "try"]},
+  {"query": "面向对象继承", "expected": ["继承", "类"]},
+  {"query": "动态规划状态转移", "expected": ["动态规划", "状态"]},
+  {"query": "图的广度优先搜索", "expected": ["广度优先", "BFS", "图"]},
+  {"query": "递归的基本情况", "expected": ["递归", "基本情况"]},
+  {"query": "字典和集合的区别", "expected": ["字典", "集合"]}
+]

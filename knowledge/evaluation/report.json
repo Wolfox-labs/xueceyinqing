@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-10-02T02:13:10.872655+00:00",
+  "total": 8,
+  "passed": 8,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "query": "列表怎么创建",
+      "expected": [
+        "列表",
+        "创建"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "列表创建",
+          "path": "curated/legacy/python_lists/02_列表创建.md"
+        },
+        {
+          "knowledge_point": "列表推导式",
+          "path": "curated/legacy/python_basics/07_列表推导式.md"
+        },
+        {
+          "knowledge_point": "列表函数",
+          "path": "curated/legacy/python_lists/07_列表函数.md"
+        }
+      ]
+    },
+    {
+      "query": "函数参数有哪些",
+      "expected": [
+        "函数",
+        "参数"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "函数定义",
+          "path": "curated/legacy/python_basics/08_函数定义.md"
+        },
+        {
+          "knowledge_point": "定义函数",
+          "path": "curated/legacy/python_functions_modules/02_定义函数.md"
+        },
+        {
+          "knowledge_point": "随机数函数（random模块）",
+          "path": "curated/legacy/python_numbers/06_随机数函数random模块.md"
+        }
+      ]
+    },
+    {
+      "query": "Python 异常处理",
+      "expected": [
+        "异常",
+        "try"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "异常处理",
+          "path": "curated/python3/exceptions.md"
+        },
+        {
+          "knowledge_point": "捕获多种异常",
+          "path": "curated/legacy/python_file_io_exceptions/13_捕获多种异常.md"
+        },
+        {
+          "knowledge_point": "触发异常（raise）",
+          "path": "curated/legacy/python_file_io_exceptions/15_触发异常raise.md"
+        }
+      ]
+    },
+    {
+      "query": "面向对象继承",
+      "expected": [
+        "继承",
+        "类"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "面向对象",
+          "path": "curated/python3/class_object.md"
+        },
+        {
+          "knowledge_point": "python_oop",
+          "path": "curated/legacy/python_oop/01_python_oop.md"
+        },
+        {
+          "knowledge_point": "File 对象属性",
+          "path": "curated/legacy/python_file_io_exceptions/04_File_对象属性.md"
+        }
+      ]
+    },
+    {
+      "query": "动态规划状态转移",
+      "expected": [
+        "动态规划",
+        "状态"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "动态规划",
+          "path": "curated/algorithms/dynamic_programming.md"
+        },
+        {
+          "knowledge_point": "递归",
+          "path": "curated/functions/recursion.md"
+        },
+        {
+          "knowledge_point": "下划线命名规则",
+          "path": "curated/legacy/python_oop/15_下划线命名规则.md"
+        }
+      ]
+    },
+    {
+      "query": "图的广度优先搜索",
+      "expected": [
+        "广度优先",
+        "BFS",
+        "图"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "图搜索",
+          "path": "curated/algorithms/graph_search.md"
+        },
+        {
+          "knowledge_point": "搜索路径",
+          "path": "curated/legacy/python_functions_modules/08_搜索路径.md"
+        },
+        {
+          "knowledge_point": "图搜索",
+          "path": "curated/algorithms/graph_search.md"
+        }
+      ]
+    },
+    {
+      "query": "递归的基本情况",
+      "expected": [
+        "递归",
+        "基本情况"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "递归",
+          "path": "curated/functions/recursion.md"
+        },
+        {
+          "knowledge_point": "算法基础",
+          "path": "curated/algorithms/complexity.md"
+        },
+        {
+          "knowledge_point": "图搜索",
+          "path": "curated/algorithms/graph_search.md"
+        }
+      ]
+    },
+    {
+      "query": "字典和集合的区别",
+      "expected": [
+        "字典",
+        "集合"
+      ],
+      "hit": true,
+      "top_results": [
+        {
+          "knowledge_point": "字典和集合",
+          "path": "curated/legacy/python_basics/04_字典和集合.md"
+        },
+        {
+          "knowledge_point": "字典与集合",
+          "path": "curated/collections/dict_set_deep.md"
+        },
+        {
+          "knowledge_point": "globals() 和 locals()",
+          "path": "curated/legacy/python_functions_modules/11_globals_和_locals.md"
+        }
+      ]
+    }
+  ]
+}
